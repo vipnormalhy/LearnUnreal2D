@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Classes/Camera/CameraComponent.h"
 #include "SpriteCharactor.generated.h"
 
 UCLASS()
-class FORGINA_API ASpriteCharactor : public ACharacter
-{
+class FORGINA_API ASpriteCharactor : public ACharacter {
 	GENERATED_BODY()
 
 public:
@@ -26,6 +26,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
-	
+	UPROPERTY(EditAnywhere)
+	UCameraComponent* SpriteCamera;
 };
