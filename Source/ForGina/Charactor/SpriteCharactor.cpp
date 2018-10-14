@@ -13,8 +13,8 @@ ASpriteCharactor::ASpriteCharactor() {
 	SpriteCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("character camera component"));
 	SpriteCamera->SetupAttachment(RootComponent);
 
-	SpriteCamera->SetRelativeLocation(FVector(-200, 0, 110));
-	SpriteCamera->SetRelativeRotation(FRotator(-40, 0, 0));
+	SpriteCamera->SetRelativeLocation(FVector(-200, 450, 0));
+	SpriteCamera->SetRelativeRotation(FRotator(0, 15, -90));
 
 	// init Sprite Component
 	SpriteComponent = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Sprite component"));
@@ -23,6 +23,7 @@ ASpriteCharactor::ASpriteCharactor() {
 	// init Sprite Flipbook Component
 	FlipbookComponent = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("Sprite flipbook component"));
 	FlipbookComponent->SetupAttachment(RootComponent);
+	FlipbookComponent->SetRelativeLocation(FVector(0, 0, 50));
 }
 
 // Called when the game starts or when spawned
