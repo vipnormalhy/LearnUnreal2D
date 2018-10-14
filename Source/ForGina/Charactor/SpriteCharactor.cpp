@@ -19,6 +19,10 @@ ASpriteCharactor::ASpriteCharactor() {
 	// init Sprite Component
 	SpriteComponent = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Sprite component"));
 	SpriteComponent->SetupAttachment(RootComponent);
+
+	// init Sprite Flipbook Component
+	FlipbookComponent = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("Sprite flipbook component"));
+	FlipbookComponent->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned

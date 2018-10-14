@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
 #include "PaperSpriteComponent.h"
+#include "PaperFlipbookComponent.h"
 #include "SpriteCharactor.generated.h"
 
 UCLASS()
@@ -32,4 +33,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UPaperSpriteComponent* SpriteComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPaperFlipbookComponent* FlipbookComponent;
 };
