@@ -4,7 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Classes/Camera/CameraComponent.h"
+#include "Camera/CameraComponent.h"
+#include "PaperSpriteComponent.h"
 #include "SpriteCharactor.generated.h"
 
 UCLASS()
@@ -26,6 +27,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UCameraComponent* SpriteCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPaperSpriteComponent* SpriteComponent;
 };

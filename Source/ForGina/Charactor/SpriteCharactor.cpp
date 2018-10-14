@@ -5,7 +5,7 @@
 
 
 // Sets default values
-ASpriteCharactor::ASpriteCharactor() : SpriteCamera(NULL) {
+ASpriteCharactor::ASpriteCharactor() {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -15,6 +15,10 @@ ASpriteCharactor::ASpriteCharactor() : SpriteCamera(NULL) {
 
 	SpriteCamera->SetRelativeLocation(FVector(-200, 0, 110));
 	SpriteCamera->SetRelativeRotation(FRotator(-40, 0, 0));
+
+	// init Sprite Component
+	SpriteComponent = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Sprite component"));
+	SpriteComponent->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
