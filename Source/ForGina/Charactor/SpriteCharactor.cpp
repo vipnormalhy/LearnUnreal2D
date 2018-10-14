@@ -13,9 +13,8 @@ ASpriteCharactor::ASpriteCharactor() {
 	SpriteCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("character camera component"));
 	SpriteCamera->SetupAttachment(RootComponent);
 
-	SpriteCamera->SetRelativeLocation(FVector(0, 450, 0));
-	SpriteCamera->SetRelativeRotation(FRotator(0, 15, -90));
-	SpriteCamera->bUsePawnControlRotation = true;
+	SpriteCamera->SetRelativeLocation(FVector(0, 900, 350));
+	SpriteCamera->SetRelativeRotation(FRotator(0, 0, -90));
 
 	// init Sprite Component
 	SpriteComponent = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Sprite component"));
