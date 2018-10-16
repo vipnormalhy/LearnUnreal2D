@@ -5,9 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
-#include "PaperSpriteComponent.h"
 #include "PaperFlipbookComponent.h"
 #include "SpriteCharactor.generated.h"
+
 
 UCLASS()
 class FORGINA_API ASpriteCharactor : public ACharacter {
@@ -32,8 +32,15 @@ public:
 	UCameraComponent* SpriteCamera;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UPaperSpriteComponent* SpriteComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UPaperFlipbookComponent* FlipbookComponent;
+
+	void MoveX(float AxisValue);
+
+	void StartJump();
+	void StopJump();
+
+	bool bIsJumping;
+	FVector CurrentVelocity;
+
+	void UpdateMoveAction(float DeltaTime);
 };
