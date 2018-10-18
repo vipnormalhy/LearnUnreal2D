@@ -42,6 +42,8 @@ void ASpriteCharactor::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAxis("MoveX", this, &ASpriteCharactor::MoveX);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASpriteCharactor::StartJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ASpriteCharactor::StopJump);
 }
 
 void ASpriteCharactor::MoveX(float AxisValue) {
@@ -53,11 +55,11 @@ void ASpriteCharactor::MoveX(float AxisValue) {
 }
 
 void ASpriteCharactor::StartJump() {
-	bIsJumping = true;
+	bPressedJump = true;
 }
 
 void ASpriteCharactor::StopJump() {
-	bIsJumping = false;
+	bPressedJump = false;
 }
 
 void ASpriteCharactor::UpdateMoveAction(float DeltaTime) {

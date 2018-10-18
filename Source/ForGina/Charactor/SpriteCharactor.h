@@ -39,8 +39,8 @@ public:
 	void StartJump();
 	void StopJump();
 
-	bool bIsJumping;
 	FVector CurrentVelocity;
 
 	void UpdateMoveAction(float DeltaTime);
+	void UpdateJumpAction(float DeltaTime);
 };
