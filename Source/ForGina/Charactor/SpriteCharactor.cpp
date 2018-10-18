@@ -22,7 +22,6 @@ ASpriteCharactor::ASpriteCharactor() {
 	FlipbookComponent->SetRelativeLocation(FVector(0, 0, 50));
 
 	// AutoPossessPlayer = EAutoReceiveInput::Player0;
-	bIsJumping = false;
 }
 
 // Called when the game starts or when spawned
