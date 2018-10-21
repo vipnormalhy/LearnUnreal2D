@@ -39,8 +39,10 @@ public:
 	void StartJump();
 	void StopJump();
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FVector CurrentVelocity;
 
 	void UpdateMoveAction(float DeltaTime);
 	void UpdateJumpAction(float DeltaTime);
+	virtual bool CanJumpInternal_Implementation() const;
 };

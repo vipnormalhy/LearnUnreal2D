@@ -55,10 +55,11 @@ void ASpriteCharactor::MoveX(float AxisValue) {
 
 void ASpriteCharactor::StartJump() {
 	bPressedJump = true;
+	JumpKeyHoldTime = 1.0;
 }
 
 void ASpriteCharactor::StopJump() {
-	bPressedJump = false;
+	ResetJumpState();
 }
 
 void ASpriteCharactor::UpdateMoveAction(float DeltaTime) {
@@ -66,4 +67,8 @@ void ASpriteCharactor::UpdateMoveAction(float DeltaTime) {
 		FVector NewLocation = GetActorLocation() + (CurrentVelocity * DeltaTime);
 		SetActorLocation(NewLocation);
 	}
+}
+
+bool ASpriteCharactor::CanJumpInternal_Implementation() const {
+	return true;
 }
