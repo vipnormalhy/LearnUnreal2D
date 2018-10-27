@@ -44,5 +44,5 @@ public:
 
 	void UpdateMoveAction(float DeltaTime);
 	void UpdateJumpAction(float DeltaTime);
-	virtual bool CanJumpInternal_Implementation() const;
+	// virtual bool CanJumpInternal_Implementation() const;
 };

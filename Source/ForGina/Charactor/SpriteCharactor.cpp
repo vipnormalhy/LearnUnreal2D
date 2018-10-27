@@ -21,6 +21,8 @@ ASpriteCharactor::ASpriteCharactor() {
 	FlipbookComponent->SetupAttachment(RootComponent);
 	FlipbookComponent->SetRelativeLocation(FVector(0, 0, 50));
 
+	// JumpMaxCount = 1;
+
 	// AutoPossessPlayer = EAutoReceiveInput::Player0;
 }
 
@@ -50,7 +52,7 @@ void ASpriteCharactor::MoveX(float AxisValue) {
 		return;
 	}
 
-	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
+	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 300.0f;
 }
 
 void ASpriteCharactor::StartJump() {
@@ -69,6 +71,6 @@ void ASpriteCharactor::UpdateMoveAction(float DeltaTime) {
 	}
 }
 
-bool ASpriteCharactor::CanJumpInternal_Implementation() const {
-	return true;
-}
+// bool ASpriteCharactor::CanJumpInternal_Implementation() const {
+// 	return true;
+// }
